@@ -1,5 +1,8 @@
-puppet-unicorn
-==============
+# unicorn
+![](https://img.shields.io/puppetforge/pdk-version/ploperations/unicorn.svg?style=popout)
+![](https://img.shields.io/puppetforge/v/ploperations/unicorn.svg?style=popout)
+![](https://img.shields.io/puppetforge/dt/ploperations/unicorn.svg?style=popout)
+[![Build Status](https://github.com/ploperations/ploperations-unicorn/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/ploperations/ploperations-unicorn/actions/workflows/ci.yml)
 
 Install and run unicorn.
 
@@ -32,3 +35,11 @@ Requirements
 ------------
 
   * Debian something.
+
+## Reference
+
+This module is documented via `pdk bundle exec puppet strings generate --format markdown`. Please see [REFERENCE.md](REFERENCE.md) for more info.
+
+## Changelog
+
+[CHANGELOG.md](CHANGELOG.md) is generated prior to each release via `pdk bundle exec rake changelog`. This proecss relies on labels that are applied to each pull request.
