@@ -24,7 +24,6 @@ group :development do
   gem "puppet-module-posix-dev-r#{minor_version}", '~> 1.0',                 require: false, platforms: [:ruby]
   gem "puppet-module-win-default-r#{minor_version}", '~> 1.0',               require: false, platforms: [:mswin, :mingw, :x64_mingw]
   gem "puppet-module-win-dev-r#{minor_version}", '~> 1.0',                   require: false, platforms: [:mswin, :mingw, :x64_mingw]
-  gem "coveralls", '~> 0.8',                                                 require: false
   gem "github_changelog_generator", '~> 1.15',                               require: false
   gem "puppet-lint-absolute_classname-check", '~> 3.0',                      require: false
   gem "puppet-lint-absolute_template_path", '~> 1.0',                        require: false
