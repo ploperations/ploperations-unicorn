@@ -6,18 +6,39 @@
 
 ### Classes
 
-* [`unicorn`](#unicorn)
-* [`unicorn::params`](#unicornparams)
+* [`unicorn`](#unicorn): Install and run unicorn.
+* [`unicorn::params`](#unicornparams): Params class with default values.
 
 ### Defined types
 
-* [`unicorn::app`](#unicornapp)
+* [`unicorn::app`](#unicornapp): Defines a unicorn application
 
 ## Classes
 
 ### <a name="unicorn"></a>`unicorn`
 
-The unicorn class.
+Install and run unicorn.
+
+#### Examples
+
+##### 
+
+```puppet
+unicorn::app { 'my-sinatra-app':
+  approot     => '/opt/my-sinatra-app',
+  pidfile     => '/opt/my-sinatra-app/unicorn.pid',
+  socket      => '/opt/my-sinatra-app/unicorn.sock',
+  user        => 'sinatra',
+  group       => 'sinatra',
+  preload_app => true,
+  rack_env    => 'production',
+  source      => 'bundler',
+  require     => [
+    Class['ruby::dev'],
+    Bundler::Install[$app_root],
+  ],
+}
+```
 
 #### Parameters
 
@@ -32,15 +53,15 @@ The following parameters are available in the `unicorn` class:
 
 Data type: `Any`
 
+Path to export the HOME environment.
 
-
-Default value: `''`
+Default value: ``undef``
 
 ##### <a name="manage_package"></a>`manage_package`
 
 Data type: `Any`
 
-
+Whether to manage the unicorn package.
 
 Default value: ``true``
 
@@ -48,7 +69,7 @@ Default value: ``true``
 
 Data type: `Any`
 
-
+State to ensure the unicorn package.
 
 Default value: `'present'`
 
@@ -56,19 +77,19 @@ Default value: `'present'`
 
 Data type: `Any`
 
-
+The provider used to ensure the unicorn package.
 
 Default value: `'gem'`
 
 ### <a name="unicornparams"></a>`unicorn::params`
 
-The unicorn::params class.
+Params class with default values.
 
 ## Defined types
 
 ### <a name="unicornapp"></a>`unicorn::app`
 
-The unicorn::app class.
+Defines a unicorn application
 
 #### Parameters
 
@@ -96,33 +117,33 @@ The following parameters are available in the `unicorn::app` defined type:
 
 Data type: `Any`
 
-
+Path to the application working directory.
 
 ##### <a name="pidfile"></a>`pidfile`
 
 Data type: `Any`
 
-
+Path to the PID file.
 
 ##### <a name="socket"></a>`socket`
 
 Data type: `Any`
 
-
+Path to socket file.
 
 ##### <a name="export_home"></a>`export_home`
 
 Data type: `Any`
 
+Path to export the HOME environment.
 
-
-Default value: `''`
+Default value: ``undef``
 
 ##### <a name="backlog"></a>`backlog`
 
 Data type: `Any`
 
-
+Value to set for the backlog on the listening socket.
 
 Default value: `'2048'`
 
@@ -130,15 +151,15 @@ Default value: `'2048'`
 
 Data type: `Any`
 
+Number of worker_processes to run.
 
-
-Default value: `$::processorcount`
+Default value: `$facts['processors']['count']`
 
 ##### <a name="user"></a>`user`
 
 Data type: `Any`
 
-
+Specify the user to run unicorn as.
 
 Default value: `'root'`
 
@@ -146,7 +167,7 @@ Default value: `'root'`
 
 Data type: `Any`
 
-
+Specify the group to run unicorn as.
 
 Default value: `'root'`
 
@@ -154,15 +175,15 @@ Default value: `'root'`
 
 Data type: `Any`
 
+The path to install the configuration file.
 
-
-Default value: `''`
+Default value: ``undef``
 
 ##### <a name="config_template"></a>`config_template`
 
 Data type: `Any`
 
-
+The source template for the configuration file.
 
 Default value: `'unicorn/config_unicorn.config.rb.erb'`
 
@@ -170,7 +191,7 @@ Default value: `'unicorn/config_unicorn.config.rb.erb'`
 
 Data type: `Any`
 
-
+The template to use for the unicorn init script.
 
 Default value: ``undef``
 
@@ -178,7 +199,7 @@ Default value: ``undef``
 
 Data type: `Any`
 
-
+The time in seconds between checks for the old unicorn process during a service reload.
 
 Default value: `15`
 
@@ -186,7 +207,7 @@ Default value: `15`
 
 Data type: `Any`
 
-
+Path to the application log directory.
 
 Default value: `"${approot}/log"`
 
@@ -194,7 +215,7 @@ Default value: `"${approot}/log"`
 
 Data type: `Any`
 
-
+The rack environment mode to start as.
 
 Default value: `'production'`
 
@@ -202,7 +223,7 @@ Default value: `'production'`
 
 Data type: `Any`
 
-
+Whether to preload the application before forking worker processes.
 
 Default value: ``false``
 
@@ -210,7 +231,7 @@ Default value: ``false``
 
 Data type: `Any`
 
-
+The daemon source used to run the application.
 
 Default value: `'system'`
 
@@ -218,7 +239,7 @@ Default value: `'system'`
 
 Data type: `Any`
 
-
+A hash of additional settings to pass directly intol the application configuration file.
 
 Default value: `{}`
 
