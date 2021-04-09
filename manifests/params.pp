@@ -1,8 +1,8 @@
+# Params class with default values.
 class unicorn::params {
-
-  case $::operatingsystem {
+  case $facts['os']['name'] {
     'debian': {
-      case $::lsbmajdistrelease {
+      case $facts['os']['release']['major'] {
         '6': {
           $unicorn_executable = '/var/lib/gems/1.8/bin/unicorn'
           $bundler_executable = '/var/lib/gems/1.8/bin/bundle'
@@ -19,7 +19,7 @@ class unicorn::params {
     }
   }
 
-  case $::kernel {
+  case $facts['kernel'] {
     'linux': {
       $rc_d        = '/etc/init.d'
       $etc_default = true
@@ -30,5 +30,6 @@ class unicorn::params {
       $etc_default = false
       $initscript  = 'unicorn/rc.d-unicorn.erb'
     }
+    default: {}
   }
 }
