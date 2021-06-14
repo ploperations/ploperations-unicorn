@@ -53,6 +53,7 @@ Gemfile:
       - gem: 'puppet-lint-version_comparison-check'
         version: '~> 0.2'
 Rakefile:
+  changelog_version_tag_pattern: '%s'
   linter_fail_on_warnings: true
   requires:
     - 'puppet-strings/tasks'
