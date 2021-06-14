@@ -1,4 +1,4 @@
-name: CI
+name: PR Testing
 
 on:
   - pull_request
@@ -15,11 +15,11 @@ jobs:
     name: Puppet ${{ matrix.puppet_versions }}
     steps:
     - uses: actions/checkout@v1
-    - name: Install the Puppet PDK
+    - name: Install the PDK
       run: |
-        CODENAME=$(grep UBUNTU_CODENAME /etc/os-release | cut -d '=' -f2)
-        wget https://apt.puppet.com/puppet-tools-release-$CODENAME.deb
-        sudo dpkg -i puppet-tools-release-$CODENAME.deb
+        source /etc/os-release
+        wget https://apt.puppet.com/puppet-tools-release-${UBUNTU_CODENAME}.deb
+        sudo dpkg -i puppet-tools-release-${UBUNTU_CODENAME}.deb
         sudo apt-get update
         sudo apt-get install pdk
     - name: Syntax validation

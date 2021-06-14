@@ -3,7 +3,7 @@
 ![PDK Version Badge](https://img.shields.io/puppetforge/pdk-version/ploperations/unicorn.svg?style=popout)
 [![Puppet Forge Version Badge](https://img.shields.io/puppetforge/v/ploperations/unicorn.svg?style=popout)](https://forge.puppet.com/modules/ploperations/unicorn)
 ![Download Count Badge](https://img.shields.io/puppetforge/dt/ploperations/unicorn.svg?style=popout)
-[![Build Status](https://github.com/ploperations/ploperations-unicorn/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/ploperations/ploperations-unicorn/actions/workflows/ci.yml)
+[![Build Status](https://github.com/ploperations/ploperations-unicorn/actions/workflows/pr_test.yml/badge.svg?branch=main)](https://github.com/ploperations/ploperations-unicorn/actions/workflows/pr_test.yml)
 
 ## Description
 
