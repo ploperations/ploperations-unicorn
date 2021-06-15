@@ -9,6 +9,10 @@
   "issues_url": "https://github.com/ploperations/ploperations-unicorn/issues",
   "dependencies": [
     {
+      "name": "camptocamp/systemd",
+      "version_requirement": ">= 3.0.0 < 4.0.0"
+    },
+    {
       "name": "ploperations/bundler",
       "version_requirement": ">= 0.0.1 < 2.0.0"
     },
