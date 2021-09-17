@@ -52,6 +52,8 @@ Gemfile:
         version: '~> 1.2'
       - gem: 'puppet-lint-version_comparison-check'
         version: '~> 0.2'
+      - gem: 'rspec-puppet-utils'
+        version: '~> 3.4'
 Rakefile:
   changelog_version_tag_pattern: '%s'
   linter_fail_on_warnings: true

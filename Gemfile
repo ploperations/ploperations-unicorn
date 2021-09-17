@@ -46,6 +46,7 @@ group :development do
   gem "puppet-lint-unquoted_string-check", '~> 2.0',                         require: false
   gem "puppet-lint-variable_contains_upcase", '~> 1.2',                      require: false
   gem "puppet-lint-version_comparison-check", '~> 0.2',                      require: false
+  gem "rspec-puppet-utils", '~> 3.4',                                        require: false
 end
 group :system_tests do
   gem "puppet-module-posix-system-r#{minor_version}", '~> 1.0', require: false, platforms: [:ruby]
