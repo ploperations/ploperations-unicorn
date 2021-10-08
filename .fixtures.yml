@@ -9,6 +9,3 @@ fixtures:
     bundler:
       repo: 'git://github.com/puppetlabs-operations/puppet-bundler.git'
       ref: 'a7eba21a471016123effe728c2db3602feaffb13'
-    rack:
-      repo: 'git://github.com/puppetlabs-operations/puppet-rack.git'
-      ref: '19f1e613a82d0aa1fbbf6b3b1ff874cf0fdbd707'

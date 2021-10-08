@@ -48,6 +48,9 @@ The following parameters are available in the `unicorn` class:
 * [`manage_package`](#manage_package)
 * [`ensure`](#ensure)
 * [`provider`](#provider)
+* [`manage_rack`](#manage_rack)
+* [`rack_ensure`](#rack_ensure)
+* [`rack_provider`](#rack_provider)
 
 ##### <a name="export_home"></a>`export_home`
 
@@ -78,6 +81,30 @@ Default value: `'present'`
 Data type: `Any`
 
 The provider used to ensure the unicorn package.
+
+Default value: `'gem'`
+
+##### <a name="manage_rack"></a>`manage_rack`
+
+Data type: `Any`
+
+Whether to manage the rack package.
+
+Default value: ``true``
+
+##### <a name="rack_ensure"></a>`rack_ensure`
+
+Data type: `Any`
+
+State to ensure the rack package.
+
+Default value: `'present'`
+
+##### <a name="rack_provider"></a>`rack_provider`
+
+Data type: `Any`
+
+The provider used to ensure the rack package.
 
 Default value: `'gem'`
 
