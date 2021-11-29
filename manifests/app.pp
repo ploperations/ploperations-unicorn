@@ -101,8 +101,9 @@ define unicorn::app (
       mode    => '0644',
       enable  => true,
       active  => true,
+      restart => "/bin/systemctl reload-or-restart unicorn_${name}.service",
     }
-    ~> service { "unicorn_${name}":
+    -> service { "unicorn_${name}":
       ensure => running,
       enable => true,
     }
