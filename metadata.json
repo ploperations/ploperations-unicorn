@@ -17,10 +17,6 @@
       "version_requirement": ">= 0.0.1 < 2.0.0"
     },
     {
-      "name": "ploperations/rack",
-      "version_requirement": ">= 0.0.1 < 1.0.0"
-    },
-    {
       "name": "puppetlabs/ruby",
       "version_requirement": ">= 0.1.0 < 2.0.0"
     }
