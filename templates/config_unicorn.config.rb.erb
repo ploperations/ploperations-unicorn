@@ -3,6 +3,13 @@
 worker_processes <%= @workers %>
 working_directory '<%= @approot %>'
 listen '<%= @socket %>', :backlog => <%= @backlog %>
+<% @listens.each do |listen| -%>
+<%   if listen.is_a? Integer -%>
+listen <%= listen %>, :backlog => <%= @backlog %>
+<%   else -%>
+listen "<%= listen %>", :backlog => <%= @backlog %>
+<%   end -%>
+<% end -%>
 timeout 300
 client_body_buffer_size 524288
 
