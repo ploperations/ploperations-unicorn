@@ -6,6 +6,8 @@
 #
 # @param socket Path to socket file.
 #
+# @param listens Additional listen directives other than the default socket.
+#
 # @param export_home Path to export the HOME environment.
 #
 # @param backlog Value to set for the backlog on the listening socket.
@@ -37,6 +39,7 @@ define unicorn::app (
   $approot,
   $pidfile,
   $socket,
+  $listens         = [],
   $export_home     = undef,
   $backlog         = '2048',
   $workers         = $facts['processors']['count'],
