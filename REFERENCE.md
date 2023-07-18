@@ -51,7 +51,7 @@ The following parameters are available in the `unicorn` class:
 
 ##### <a name="export_home"></a>`export_home`
 
-Data type: `Any`
+Data type: `Optional[Stdlib::Absolutepath]`
 
 Path to export the HOME environment.
 
@@ -59,7 +59,7 @@ Default value: ``undef``
 
 ##### <a name="manage_package"></a>`manage_package`
 
-Data type: `Any`
+Data type: `Boolean`
 
 Whether to manage the unicorn package.
 
@@ -67,7 +67,7 @@ Default value: ``true``
 
 ##### <a name="ensure"></a>`ensure`
 
-Data type: `Any`
+Data type: `String[1]`
 
 State to ensure the unicorn package.
 
@@ -75,7 +75,7 @@ Default value: `'present'`
 
 ##### <a name="provider"></a>`provider`
 
-Data type: `Any`
+Data type: `String[1]`
 
 The provider used to ensure the unicorn package.
 
@@ -116,25 +116,25 @@ The following parameters are available in the `unicorn::app` defined type:
 
 ##### <a name="approot"></a>`approot`
 
-Data type: `Any`
+Data type: `Stdlib::Absolutepath`
 
 Path to the application working directory.
 
 ##### <a name="pidfile"></a>`pidfile`
 
-Data type: `Any`
+Data type: `Stdlib::Absolutepath`
 
 Path to the PID file.
 
 ##### <a name="socket"></a>`socket`
 
-Data type: `Any`
+Data type: `Stdlib::Absolutepath`
 
 Path to socket file.
 
 ##### <a name="listens"></a>`listens`
 
-Data type: `Any`
+Data type: `Array`
 
 Additional listen directives other than the default socket.
 
@@ -142,7 +142,7 @@ Default value: `[]`
 
 ##### <a name="export_home"></a>`export_home`
 
-Data type: `Any`
+Data type: `Optional[Stdlib::Absolutepath]`
 
 Path to export the HOME environment.
 
@@ -150,7 +150,7 @@ Default value: ``undef``
 
 ##### <a name="backlog"></a>`backlog`
 
-Data type: `Any`
+Data type: `String`
 
 Value to set for the backlog on the listening socket.
 
@@ -158,7 +158,7 @@ Default value: `'2048'`
 
 ##### <a name="workers"></a>`workers`
 
-Data type: `Any`
+Data type: `Integer`
 
 Number of worker_processes to run.
 
@@ -166,7 +166,7 @@ Default value: `$facts['processors']['count']`
 
 ##### <a name="user"></a>`user`
 
-Data type: `Any`
+Data type: `String[1]`
 
 Specify the user to run unicorn as.
 
@@ -174,7 +174,7 @@ Default value: `'root'`
 
 ##### <a name="group"></a>`group`
 
-Data type: `Any`
+Data type: `String[1]`
 
 Specify the group to run unicorn as.
 
@@ -182,7 +182,7 @@ Default value: `'root'`
 
 ##### <a name="config_file"></a>`config_file`
 
-Data type: `Any`
+Data type: `Optional[Stdlib::Absolutepath]`
 
 The path to install the configuration file.
 
@@ -190,7 +190,7 @@ Default value: ``undef``
 
 ##### <a name="config_template"></a>`config_template`
 
-Data type: `Any`
+Data type: `String[1]`
 
 The source template for the configuration file.
 
@@ -198,7 +198,7 @@ Default value: `'unicorn/config_unicorn.config.rb.erb'`
 
 ##### <a name="initscript"></a>`initscript`
 
-Data type: `Any`
+Data type: `Optional[String[1]]`
 
 The template to use for the unicorn init script.
 
@@ -206,7 +206,7 @@ Default value: ``undef``
 
 ##### <a name="init_time"></a>`init_time`
 
-Data type: `Any`
+Data type: `Integer`
 
 The time in seconds between checks for the old unicorn process during a service reload.
 
@@ -214,7 +214,7 @@ Default value: `15`
 
 ##### <a name="logdir"></a>`logdir`
 
-Data type: `Any`
+Data type: `Stdlib::Absolutepath`
 
 Path to the application log directory.
 
@@ -222,7 +222,7 @@ Default value: `"${approot}/log"`
 
 ##### <a name="rack_env"></a>`rack_env`
 
-Data type: `Any`
+Data type: `String[1]`
 
 The rack environment mode to start as.
 
@@ -230,7 +230,7 @@ Default value: `'production'`
 
 ##### <a name="preload_app"></a>`preload_app`
 
-Data type: `Any`
+Data type: `Boolean`
 
 Whether to preload the application before forking worker processes.
 
@@ -238,7 +238,7 @@ Default value: ``false``
 
 ##### <a name="source"></a>`source`
 
-Data type: `Any`
+Data type: `String[1]`
 
 The daemon source used to run the application.
 
@@ -246,7 +246,7 @@ Default value: `'system'`
 
 ##### <a name="extra_settings"></a>`extra_settings`
 
-Data type: `Any`
+Data type: `Hash`
 
 A hash of additional settings to pass directly intol the application configuration file.
 

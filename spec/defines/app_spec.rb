@@ -53,18 +53,18 @@ describe 'unicorn::app' do
         end
       end
 
-      context 'with export_home => \'\'' do
+      context 'with export_home => /opt/unicorn/namevar' do
         let(:params) do
-          super().merge({ 'export_home' => '' })
+          super().merge({ 'export_home' => '/opt/unicorn/namevar' })
         end
 
-        it { is_expected.to contain_unicorn__app('namevar').with_export_home('') }
+        it { is_expected.to contain_unicorn__app('namevar').with_export_home('/opt/unicorn/namevar') }
 
         case os_facts[:kernel]
         when 'Linux'
           it {
             is_expected.to contain_file('/etc/init.d/unicorn_namevar')
-              .without_content(%r{export HOME=})
+              .with_content(%r{export HOME=})
           }
         end
       end

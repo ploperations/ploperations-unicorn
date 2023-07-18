@@ -10,6 +10,7 @@ jobs:
       matrix:
         puppet_versions:
           - '7'
+          - '8'
 
     name: Puppet ${{ matrix.puppet_versions }}
     steps:
