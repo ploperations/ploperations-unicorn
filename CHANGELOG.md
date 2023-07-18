@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [2.1.0](https://github.com/ploperations/ploperations-unicorn/tree/2.1.0) (2023-07-18)
+
+[Full Changelog](https://github.com/ploperations/ploperations-unicorn/compare/2.0.3...2.1.0)
+
+### Added
+
+- Add ability for more 'listen' directives [\#15](https://github.com/ploperations/ploperations-unicorn/pull/15) ([hunner](https://github.com/hunner))
+
 ## [2.0.3](https://github.com/ploperations/ploperations-unicorn/tree/2.0.3) (2021-12-01)
 
 [Full Changelog](https://github.com/ploperations/ploperations-unicorn/compare/2.0.2...2.0.3)

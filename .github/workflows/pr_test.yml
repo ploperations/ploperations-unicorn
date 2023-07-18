@@ -9,7 +9,6 @@ jobs:
     strategy:
       matrix:
         puppet_versions:
-          - '6'
           - '7'
 
     name: Puppet ${{ matrix.puppet_versions }}

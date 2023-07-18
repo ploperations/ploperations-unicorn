@@ -1,6 +1,6 @@
 {
   "name": "ploperations-unicorn",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "author": "ploperations",
   "summary": "Install and manage Unicorn, a fast rack HTTP server",
   "license": "Apache-2.0",
