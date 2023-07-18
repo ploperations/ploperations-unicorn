@@ -98,6 +98,7 @@ The following parameters are available in the `unicorn::app` defined type:
 * [`approot`](#approot)
 * [`pidfile`](#pidfile)
 * [`socket`](#socket)
+* [`listens`](#listens)
 * [`export_home`](#export_home)
 * [`backlog`](#backlog)
 * [`workers`](#workers)
@@ -130,6 +131,14 @@ Path to the PID file.
 Data type: `Any`
 
 Path to socket file.
+
+##### <a name="listens"></a>`listens`
+
+Data type: `Any`
+
+Additional listen directives other than the default socket.
+
+Default value: `[]`
 
 ##### <a name="export_home"></a>`export_home`
 
