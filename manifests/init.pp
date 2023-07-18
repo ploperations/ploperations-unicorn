@@ -24,10 +24,10 @@
 #
 # @param provider The provider used to ensure the unicorn package.
 class unicorn (
-  $export_home = undef,
-  $manage_package = true,
-  $ensure   = 'present',
-  $provider = 'gem',
+  Boolean $manage_package                     = true,
+  String[1] $ensure                           = 'present',
+  String[1] $provider                         = 'gem',
+  Optional[Stdlib::Absolutepath] $export_home = undef,
 ) {
   if $manage_package {
     # The unicorn gem has prerequisites that requires building native extensions.
